@@ -1,0 +1,150 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	.h1
+		font-size: 3rem
+	.header__body-text 
+		.fz2rem
+			font-size: 1.7rem
+
+	.advantages__cart-text
+		font-size: 1rem
+
+// ≥992px
++media-breakpoint-down(md)
+	.header__top-phone
+		display: none
+	.header__top-button
+		justify-content: flex-end
+	.header__body-text 
+		.fz2rem
+			font-size: 1.5rem
+	.header__body-form form
+		width: 100%
+	.h1
+		font-size: 2.3rem
+	
+	.h2
+		font-size: 1.7rem
+
+	.advantages__cart-text, .advantages__text
+		font-size: 0.8rem
+	.advantages__cart-img i
+		font-size: 1.7rem
+
+
+@media (min-width: 768px) and (max-width: 992px)
+	.header__top, .header__body, .header__body-downtext, .advantages, .media, .purchase, .request, .footer
+		.container
+			min-width: 100%
+
+// ≥768px
++media-breakpoint-down(sm)
+	.header__top-logo
+		display: none
+	.header__top-button
+		margin-top: 4px
+		justify-content: center
+	.header__body
+		min-height: 1000px
+	// .animation-icon-box
+	// 	animation: shake 2s infinite
+	.header__body-text, .header__body-form
+		min-height: 300px
+	.header__body-text
+		text-align: center
+	.header__body-form
+		margin-top: 0
+		form
+			width: 100%
+	.header__body-downtext
+		// .container
+		// 	min-width: 540px
+		.header__body-downtext-block
+			margin-bottom: 15px
+			img
+				height: 45px
+
+	.map__body-desc
+		text-align: center
+		margin-bottom: 20px
+
+	.request__body-form .field
+		display: block
+		max-width: 400px
+		margin: 15px auto
+		input
+			width: 100%
+
+	.advantages__text
+		margin-top: 25px
+
+
+	.footer
+		&__body-text
+			text-align: center
+			p > span
+				display: block
+				width: 100%
+		&__desc
+			text-align: center
+
+@media (min-width: 576px) and (max-width: 768px)
+	.fflats
+		.container
+			min-width: 100%
+
+
+// ≥576px
++media-breakpoint-down(xs)
+	html
+		font-size: 14px
+
+	.header__body-downtext
+		.container
+			min-width: 100%
+		.header__body-downtext-block
+			img
+				height: 35px
+
+	.advantages
+		padding: 30px 0
+		&__cart
+			display: flex
+			text-align: left
+			&-img
+				display: block
+			&-text
+				width: 70%
+				margin-left: 30px
+
+@media (min-width: 0px) and (max-width: 390px)
+	.advantages__cart
+		display: block
+		&-text
+			width: 100%
+			margin-left: 0
+			text-align: center;
+		&-img
+			margin: 0 auto
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+	.modal-dialog
+		max-width: 1200px
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)

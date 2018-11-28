@@ -1,0 +1,744 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html
+	font-size: 16px
+
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+// Custom code
+
+.h1
+	font-size: 3.5rem
+	line-height: 1.3
+
+.h2
+	font-size: 2rem
+
+.fz2rem
+	font-size: 2rem
+
+.fz08rem
+	font-size: 0.8rem
+
+button:focus
+	outline: none
+
+// BEGIN HEADER
+
+.header
+	&__top
+		z-index: 20
+		background-color: rgba(255,255,255,1)
+		height: $height-top-line
+		position: fixed
+		width: 100%
+		box-shadow: 0 0 14px 10px rgba(0, 0, 0, 0.2);
+		&-logo
+			height: $height-top-line
+			//position: fixed
+			display: flex
+			align-items: center
+			&-img
+				height: $height-top-line - 10px
+				width: auto
+		&-phone
+			white-space: nowrap
+			height: $height-top-line
+			display: flex
+			align-items: center
+			justify-content: center
+			&-top
+				text-decoration: none
+				font-size: 1.5rem
+				color: $accent
+				display: contents
+				&:hover
+					text-decoration: none
+					color: lighten($accent, 5%)
+				i.fa-phone
+					transform: rotate(90deg)
+	&__top-button
+		height: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+	&__body
+		position: relative
+		height: 100vh
+		min-height: 700px
+		background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7) ), url(../img/top-bg.jpg)
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: cover
+		//background-color: #464646
+		//filter: brightness(50%)
+		&-text
+			color: #ffffff
+			//text-align: center
+			display: flex
+			align-items: center
+			justify-content: center
+			min-height: 500px
+			margin-top: $height-top-line
+		&-form
+			min-height: 500px
+			margin-top: $height-top-line
+			display: flex
+			align-items: center
+			justify-content: center
+			form
+				padding: 20px 20px;
+				width: 80%
+				float: right
+				text-align: center
+				background: rgba(30, 30, 30, 0.35)
+				border-radius: 5px
+				.form-title
+					font-size: 1rem
+					margin-bottom: 20px
+					color: #ffffff
+				.field
+					position: relative
+					margin-right: 6px
+					display: block
+					width: 100%
+					input
+						margin-bottom: 20px
+						width: 100%
+						font-size: 13px
+						border: transparent
+						//border-radius: 3px
+						background: #ffffff
+						padding: 10px 15px
+						height: 40px
+						border: 1px solid #e0e0e0
+						transition: 0.2s ease-in
+						text-align: center
+					.fas
+						position: absolute
+						right: 10px
+						top: 12px
+						color: #999
+				.declaration
+					color: #888888
+					font-size: 0.6rem
+					margin-top: 20px
+					a
+						color: #888888
+		&-downtext
+			position: absolute
+			bottom: 0
+			color: #fff
+			background: rgba(0,0,0,.2)
+			width: 100%
+			padding: 20px 0
+			.header__body-downtext-block
+				display: inline-flex
+				img
+					height: 65px
+					margin: 0 15px 0 0
+				&-title
+					line-height: 1.2
+					font-weight: 700
+					font-size: 1rem
+				&-anons
+					margin-top: 10px
+					font-size: 0.7rem
+
+// BEGIN анимация иконки телефона
+.animation-icon-box,
+.animation-icon-box:after,
+.animation-icon-box:before
+	width: 30px
+	height: 30px
+	border-radius: 35px
+	//background-color: #2196F3
+
+.animation-icon-box
+	display: flex
+	justify-content: center
+	align-items: center
+	//animation: shake 2s infinite
+
+.header__top-phone:hover .animation-icon-box
+	animation: shake 2s infinite
+
+.animation-icon-box:after,
+.animation-icon-box:before
+	content: ''
+	position: absolute
+
+@keyframes shake
+	0%
+		transform: rotate(0)
+	25%
+		transform: rotate(15deg)
+	50%
+		transform: rotate(-15deg)
+	75%
+		transform: rotate(15deg)
+	100%
+		transform: rotate(-15deg)
+// END анимация иконки телефона
+
+.button-move
+	cursor: pointer
+	border: none
+	white-space: nowrap
+	display: inline-flex
+	align-items: center
+	background: $accent
+	box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1)
+	//border-radius: 5px
+	height: 45px
+	padding: 0 30px
+	color: #fff
+	font-family: Lato, Arial, sans-serif
+	//text-transform: uppercase
+	text-decoration: none
+	transition: background 0.3s, transform 0.3s, box-shadow 0.3s
+	will-change: transform
+	&:hover
+		background: lighten($accent, 5%)
+		box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2)
+		transform: translate3d(0, -2px, 0)
+		color: #fff
+		text-decoration: none
+	&:active
+		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1)
+		transform: translate3d(0, 1px, 0)
+
+// END HEADER
+
+// BEGIN Advantages section
+
+.advantages
+	padding: $gutter-top-section 0
+	color: #888
+	background-color: #f9fbfd
+	&__title
+		text-align: center
+		font-size: 1.5rem
+		margin: 20px 0 60px
+	&__cart
+		padding: 10px
+		text-align: center
+		display: flex
+		// justify-content: center
+		align-items: center
+		font-size: 1rem
+		// border: 1px solid $accent
+		// border-radius: 3px		
+		&:hover i
+			transform: scale(1.1)
+			transition: transform .5s
+		&-img
+			display: flex
+			justify-content: center
+			width: 45px
+			//margin-bottom: 20px
+			// img
+			// 	max-height: 50px
+			text-align: center
+			i
+				font-size: 2rem
+		&-text
+			margin-left: 15px
+
+// END Advantages section
+
+// BEGIN Media section
+
+.media
+	padding: 0 0 50px
+	color: $accent
+	background-color: #f9fbfd
+	.row > div
+		margin-top: 25px
+	&__item
+		user-select: none
+		height: 100%
+		cursor: pointer
+		transition: background 0.3s, transform 0.3s, box-shadow 0.3s
+		box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2)
+		&:hover
+			transform: translate3d(0, -2px, 0)
+			//color: #fff
+			text-decoration: none
+		&:active
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1)
+			transform: translate3d(0, 1px, 0)
+		&-wrap
+			//display: inline-flex
+			//border: 1px solid #0090d6
+			padding: 10px 20px
+			display: flex
+			justify-content: center
+			align-items: center
+		&-icon
+			text-align: center
+			i
+				font-size: 3rem
+			span
+				font-size: 0.8rem
+				display: none
+		&-text
+			//line-height: 1
+			margin-left: 20px
+			width: 55px
+			// display: flex
+			// justify-content: center
+			// align-items: center
+
+// END Media section
+
+// BEGIN Map section
+
+.map
+	position: relative
+	//height: 250px
+	&__bg
+		background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(../img/bg-map.jpg)
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: cover
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		//background-image: url(../img/bg-map.png)
+		//filter: blur(1px)
+		z-index: -1
+	&__body
+		color: #fff
+		//height: 250px
+		[class^="row align-items-"]
+			min-height: 300px
+		&-desc
+			&-title
+				font-size: 3rem
+		&-icoloco
+			align-items: center
+			justify-content: center
+			display: flex
+			svg
+				height: 150px
+				width: 150px
+				cursor: pointer
+				&:hover
+					background-color: rgba(0, 0, 0, 0.2)
+					transition: background-color .8s
+					border-radius: 50px
+			#map-icon #point
+				//transition: .6s
+				animation: moveupdown 1s infinite
+			#map-icon:hover #point 
+				//transform: translate(0px,-20px)
+				//animation: shake 1s infinite
+			#map-icon .st0
+				fill: none
+				stroke: #FFFFFF
+				stroke-width: 6
+				stroke-linecap: round
+				stroke-linejoin: round
+				stroke-miterlimit: 10
+			#map-icon .st1
+				fill: none
+				stroke: #FFFFFF
+				stroke-width: 6
+				stroke-miterlimit: 10
+			#map-icon .st2
+				fill: none
+			#map-icon .st3
+				fill: none
+				stroke: #FFFFFF
+				stroke-width: 6
+				stroke-linejoin: round
+				stroke-miterlimit: 10
+			#map-icon .bg
+				stroke: none
+				fill: transparent
+
+@keyframes moveupdown
+	0%
+		transform: translate(0px, 0px)
+	// 25%
+	//   transform: translate(0px,-10px)
+	50%
+		transform: translate(0px,-20px)
+	// 75%
+	//   transform: translate(0px,-10px)
+	100%
+		transform: translate(0px, 0px)
+
+// END Map section
+
+// BEGIN fflats section
+
+.fflats
+	padding: 50px 0
+	&__thumbnail
+		margin: 0 0 30px 0
+		border: 1px solid #ddd
+		//padding: 8px 12px
+		// cursor: pointer
+		padding: 10px 10px 0 10px
+		.owl-carousel
+			//margin: 10px
+		&:hover
+			border: 1px solid $accent
+			transition: border .5s,box-shadow .5s, box-shadow .5s
+			box-shadow: 3px 3px 25px 1px rgba(0,0,0,.2);
+		img
+			//width: 100%
+			//height: 230px
+			//object-fit: cover
+			//padding: 3px 3px
+		.owl-nav
+			position: absolute
+			top: 45%
+			width: 100%
+			.owl-prev
+				float: left
+			.owl-next
+				float: right
+			span
+				padding: 3px 7px 5px 7px
+				border: 1px solid #ddd
+				//border-radius: 40px
+				background-color: #ddd
+				color: #fff
+				font-size: 1.5rem
+		&:hover span
+			background-color: $accent
+			color: #fff
+			border: 1px solid $accent
+		&-body
+			//padding: 10px
+			.title-flat
+				font-size: 1.5rem
+		&:hover &-body
+			color: $accent
+		&-button
+			min-height: 50px
+			margin: 10px -10px 0
+			border-top: 1px solid #ddd
+			text-align: center
+			cursor: pointer
+			display: flex
+			justify-content: center
+			align-items: center
+			i
+				transform: rotate(-135deg)
+		&:hover &-button
+			border-top: 1px solid $accent
+			background-color: $accent
+			color: #fff
+			font-size: 1.1rem
+			transition: background-color .2s, color .2s, font-size .2s
+			div
+				//transform: rotate(-135deg)
+				animation: movekeyrightleft 1.5s infinite
+
+@keyframes movekeyrightleft
+	0%
+		//transform: translate(0px, 0px)
+		transform: scale(1)
+	// 25%
+	//   transform: translate(0px,-10px)
+	50%
+		//transform: translate(20px, 0px)
+		transform: scale(1.1)
+	// 75%
+	//   transform: translate(0px,-10px)
+	100%
+		//transform: translate(0px, 0px)
+		transform: scale(1)
+
+.fflats
+	.owl-carousel
+		.owl-item
+			display: flex
+			justify-content: center
+			align-items: center
+			img
+				height: 300px
+				width: initial
+
+// END fflats section
+
+// BEGIN Purchase section
+
+.purchase
+	padding: 50px 0
+	color: $accent
+	background-color: #f9fbfd
+	&__title
+		text-align: center
+		h2
+			margin: 40px 0
+	.row > .col-md-6
+		margin-top: 25px
+	&__method
+		user-select: none
+		padding: 10px 12px
+		height: 100%
+		background-color: #fff
+		//cursor: pointer
+		transition: background 0.3s, transform 0.3s, box-shadow 0.3s
+		box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2)
+		&:hover
+			transform: translate3d(0, -2px, 0)
+			//color: #fff
+			text-decoration: none
+		&:active
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1)
+			transform: translate3d(0, 1px, 0)
+		&-title
+			font-size: 1.5rem
+			font-weight: 500
+			text-transform: uppercase
+			span
+				background-color: $accent
+				color: #fff
+				padding: 3px 4px
+
+// END Purchase section
+
+// BEGIN Form section
+
+.request
+	position: relative
+	padding: 50px 0
+	color: #fff
+	&__bg
+		background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), url(../img/bg-request.jpg)
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: cover
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		//background-image: url(../img/bg-map.png)
+		//filter: blur(1px)
+		z-index: -1
+	&__body
+		text-align: center
+		&-title
+			h2
+				margin: 40px 0
+			p
+				margin: 30px 0
+				font-size: 1.5rem
+		&-form
+			margin: 30px 0
+			.field
+				display: inline-block
+				position: relative
+				margin: 10px 6px 0 0
+				input
+					width: 225px
+					font-size: 13px
+					border: transparent
+					//border-radius: 3px
+					background: #ffffff
+					padding: 10px 15px
+					height: 44px
+					text-align: center
+				i
+					position: absolute
+					right: 10px
+					top: 14px
+					color: #999
+		&-declaration, a
+			color: #949494
+			font-size: 0.8rem
+
+.footer
+	background: #313234
+	min-height: 100px
+	padding: 20px 0
+	&__body
+		&-text
+			margin-top: 15px
+			p
+				font-size: 0.8rem
+				margin-bottom: 0
+			a
+				color: #999
+				font-size: 0.6rem
+		&-social
+			list-style: none
+			margin: auto 0
+			text-align: center
+			padding-inline-start: 0
+		&-social > li
+			display: inline-block
+			font-size: 40px
+			margin: 0 5px
+			a
+				color: #999
+				i:hover
+					color: #c2c1c1
+					transition: color .4s
+	&__desc
+		font-size: 0.5rem
+
+// END Form section
+
+
+// BEGIN Tuning modal window
+
+body.modal-open[style]
+	padding-right: 15px!important
+
+.modal-dialog
+	height: 100vh
+	margin: 0 auto
+	display: flex
+	justify-content: center
+	align-items: center
+	.modal-content
+	button.close
+		position: absolute
+		display: block
+		right: 0
+		top: -30px
+		color: #fff
+
+.map, .media
+	.modal-dialog
+		.modal-content
+			width: 95%
+		iframe
+			width: 100%
+			min-height: calc(100vh*0.8)
+			border: 0
+
+#myModal-ekskur, #myModal-cart
+	.modal-content
+		max-width: 400px
+		.modal-body
+			&-title
+				text-align: center
+				font-size: 1.2rem
+				//font-weight: 900
+			form
+				padding: 20px 20px;
+				//width: 80%
+				float: right
+				text-align: center
+				//background: rgba(30, 30, 30, 0.35)
+				border-radius: 5px
+				.field
+					position: relative
+					margin-right: 6px
+					display: block
+					width: 100%
+					input
+						margin-bottom: 20px
+						width: 100%
+						font-size: 13px
+						border: transparent
+						//border-radius: 3px
+						background: #ffffff
+						padding: 10px 15px
+						height: 40px
+						border: 1px solid #e0e0e0
+						transition: 0.2s ease-in
+						text-align: center
+					.fas
+						position: absolute
+						right: 10px
+						top: 12px
+						color: #999
+				.declaration
+					color: #888888
+					font-size: 0.6rem
+					margin: 20px 0 0 0
+					a
+						color: #888888
+
+// END Tuning modal window
+
+.top-move-bt
+	bottom: 20px
+	cursor: pointer
+	right: -100px
+	position: fixed
+	background-color: #e0e0e0
+	z-index: 12
+	border-radius: 10em
+	color: #666666
+	font-size: 26px
+	width: 50px
+	height: 50px
+	line-height: 50px
+	text-align: center
+	transition: all .3s ease
+	opacity: 0.5
+	i
+		line-height: 0
+	&:hover
+		color: #ffffff
+		background-color: $accent
+		opacity: 1
+		animation: moveupdown_top-move-bt 1s infinite
+	&.active
+		right: 25px
+
+@keyframes moveupdown_top-move-bt
+	0%
+		transform: translate(0px, 0px)
+	// 25%
+	//   transform: translate(0px,-10px)
+	50%
+		transform: translate(0px, 5px)
+	// 75%
+	//   transform: translate(0px, 10px)
+	100%
+		transform: translate(0px, 0px)
+
+
+
+
+
+@import "media" // Always at the end
