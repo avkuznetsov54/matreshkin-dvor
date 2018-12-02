@@ -294,11 +294,14 @@ button:focus
 		user-select: none
 		height: 100%
 		cursor: pointer
-		transition: background 0.3s, transform 0.3s, box-shadow 0.3s
+		transition: background-color 0.4s, transform 0.3s, box-shadow 0.3s
 		box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2)
+		// &#object-video
+		// 	background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7) ), url(../img/bg-button-video.png)
 		&:hover
 			transform: translate3d(0, -2px, 0)
-			//color: #fff
+			color: #fff
+			background-color: $accent
 			text-decoration: none
 		&:active
 			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1)
@@ -314,9 +317,6 @@ button:focus
 			text-align: center
 			i
 				font-size: 3rem
-			span
-				font-size: 0.8rem
-				display: none
 		&-text
 			//line-height: 1
 			margin-left: 20px
@@ -631,11 +631,11 @@ body.modal-open[style]
 	padding-right: 15px!important
 
 .modal-dialog
-	height: 100vh
-	margin: 0 auto
-	display: flex
-	justify-content: center
-	align-items: center
+	// height: 100vh
+	// margin: 0 auto
+	// display: flex
+	// justify-content: center
+	// align-items: center
 	.modal-content
 	button.close
 		position: absolute
@@ -647,7 +647,7 @@ body.modal-open[style]
 .map, .media
 	.modal-dialog
 		.modal-content
-			width: 95%
+			//width: 95%
 		iframe
 			width: 100%
 			min-height: calc(100vh*0.8)
@@ -655,7 +655,7 @@ body.modal-open[style]
 
 #myModal-ekskur, #myModal-cart
 	.modal-content
-		max-width: 400px
+		//max-width: 400px
 		.modal-body
 			&-title
 				text-align: center
@@ -664,7 +664,7 @@ body.modal-open[style]
 			form
 				padding: 20px 20px;
 				//width: 80%
-				float: right
+				//float: right
 				text-align: center
 				//background: rgba(30, 30, 30, 0.35)
 				border-radius: 5px

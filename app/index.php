@@ -242,27 +242,17 @@
 			<div class="container">
 				<div class="row">
 						<div class="col-sm-6 col-md-3">
-						<div class="media__item" data-toggle="modal" data-target="#myModal-video">
+						<div class="media__item" id="object-video">
 							<div class="media__item-wrap">
-								<div class="media__item-icon"><i class="fas fa-video"></i><span>видео</span></div>
+								<div class="media__item-icon"><i class="fab fa-youtube"></i></div>
 								<div class="media__item-text">Видео</div>
 							</div>
 						</div>
-						<div class="modal" id="myModal-video" tabindex="-1" role="dialog" aria-labelledby="my_modalLabel">
-							<div class="modal-dialog" role="dialog">
-								<div class="modal-content">
-									<button type="button" class="close clickclose" data-dismiss="modal" aria-label="Close" id="myModal-video-bt"><span
-										aria-hidden="true">&times;</span></button>
-										<iframe width="560" height="315" src="https://www.youtube.com/embed/wLVhg3rgpkc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-										allowfullscreen></iframe>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="col-sm-6 col-md-3">
 							<div class="media__item" id="object-plan">
 								<div class="media__item-wrap">
-									<div class="media__item-icon"><i class="fas fa-image"></i><span>ремонт</span></div>
+									<div class="media__item-icon"><i class="fas fa-image"></i></div>
 									<div class="media__item-text">План</div>
 								</div>
 							</div>
@@ -270,7 +260,7 @@
 						<div class="col-sm-6 col-md-3">
 							<div class="media__item" id="object-photo">
 								<div class="media__item-wrap">
-									<div class="media__item-icon"><i class="fas fa-image"></i><span>фото</span></div>
+									<div class="media__item-icon"><i class="fas fa-image"></i></div>
 									<div class="media__item-text">Фото</div>
 								</div>
 							</div>
@@ -278,7 +268,7 @@
 						<div class="col-sm-6 col-md-3">
 							<div class="media__item" id="flats-repairs">
 								<div class="media__item-wrap">
-									<div class="media__item-icon"><i class="fas fa-image"></i><span>ремонт</span></div>
+									<div class="media__item-icon"><i class="fas fa-image"></i></div>
 									<div class="media__item-text">Ремонт</div>
 								</div>
 							</div>
@@ -296,9 +286,8 @@
 								<div class="map__body-desc">
 									<div class="map__body-desc-title">Расположение</div>
 									<div class="map__body-desc-text">
-										<b>Чистая слобода</b> - жилой микрорайон комплексной застройки в Новосибирске в Ленинском районе,
-										расположенный
-										на улице Титова.
+										<b>Матрёшкин двор</b> - жилой микрорайон комплексной застройки в Новосибирске в Кировском районе,
+										расположенный на улице Петухова и Дмитрия Шмонина.
 									</div>
 								</div>
 							</div>
@@ -320,7 +309,7 @@
 									</svg>
 								</div>
 								<div class="modal" id="myModal-map" tabindex="-1" role="dialog" aria-labelledby="my_modalLabel">
-									<div class="modal-dialog map-modal" role="dialog">
+									<div class="modal-dialog map-modal modal-dialog-centered" role="dialog">
 										<div class="modal-content">
 											<button type="button" class="close clickclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 											<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4fd10a4170a7f50792281722706afb6b59a19e349b4c38ef3fe1b277e4cda996&amp;source=constructor"
@@ -571,7 +560,7 @@
 		<!-- Modal заказать экскурсию топ меню-->
 
 		<div class="modal" id="myModal-ekskur" tabindex="-1" role="dialog" aria-labelledby="my_modalLabel">
-			<div class="modal-dialog" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="dialog">
 				<div class="modal-content">
 					<button type="button" class="close clickclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<div class="modal-body">
@@ -613,7 +602,7 @@
 			<!-- Modal cart flat -->
 
 			<div class="modal" id="myModal-cart" tabindex="-1" role="dialog" aria-labelledby="my_modalLabel">
-				<div class="modal-dialog" role="dialog">
+				<div class="modal-dialog modal-dialog-centered" role="dialog">
 					<div class="modal-content">
 						<button type="button" class="close clickclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<div class="modal-body">

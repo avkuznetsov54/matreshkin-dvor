@@ -1,15 +1,20 @@
 $(function() {
 
-	// BEGIN Прекращает воспроизведение видео после закрвтия модального окна
-	$("#myModal-video-bt").on('click', function (e) {
-		$("#myModal-video iframe").attr("src", $("#myModal-video iframe").attr("src"));
-	});
-	$("div#myModal-video").on('click', function (e) {
-		$("#myModal-video iframe").attr("src", $("#myModal-video iframe").attr("src"));
-	});
-	//////
+	// // BEGIN Прекращает воспроизведение видео после закрвтия модального окна
+	// $("#myModal-video-bt").on('click', function (e) {
+	// 	$("#myModal-video iframe").attr("src", $("#myModal-video iframe").attr("src"));
+	// });
+	// $("div#myModal-video").on('click', function (e) {
+	// 	$("#myModal-video iframe").attr("src", $("#myModal-video iframe").attr("src"));
+	// });
+	// //////
 
 	// открывает fancybox при нажатии на div
+	$("#object-video").on('click', function () {
+		$.fancybox.open([
+			{ src  : 'https://www.youtube.com/embed/wLVhg3rgpkc'}
+		]);
+	});
 	$("#object-plan").on('click', function () {
 		$.fancybox.open([
 			{ src  : 'img/gallery/plan.jpg'}
